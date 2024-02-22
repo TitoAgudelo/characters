@@ -7,7 +7,7 @@ function CharacterManager() {
   return (
     <CharacterProvider>
       <SearchBar />
-      <div className="character-manager">
+      <div className="character-manager w-full grid grid-cols-3 gap-8">
         <CharacterList />
         <CharacterDetail />
       </div>

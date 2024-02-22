@@ -5,7 +5,7 @@ function CharacterList() {
   const { characters, addCharacter, removeCharacter } = useCharacterContext();
 
   return (
-    <div className="character-list">
+    <div className="character-list col-span-2">
       <h2 className="text-lg font-bold mb-2">Characters</h2>
       <ul>
         {characters.map((character: Character) => (
