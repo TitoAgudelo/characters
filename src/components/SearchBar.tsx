@@ -31,7 +31,7 @@ function SearchBar() {
   };
 
   return (
-    <div className="flex mb-4">
+    <div className="flex mb-10">
       <input
         type="text"
         placeholder="Search for characters by name"

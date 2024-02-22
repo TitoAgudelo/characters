@@ -6,12 +6,12 @@ function CharacterList() {
 
   return (
     <div className="character-list col-span-2">
-      <h2 className="text-lg font-bold mb-2">Characters</h2>
+      <h2 className="text-lg font-bold mb-2 dark:text-white">Characters</h2>
       <ul>
         {characters.map((character: Character) => (
           <li
             key={character.id}
-            className="flex items-center justify-between border-b border-gray-300 py-2"
+            className="flex items-center justify-between dark:text-white py-2 dark:bg-gray-700 px-4"
           >
             <span>{character.name}</span>
             <div>
