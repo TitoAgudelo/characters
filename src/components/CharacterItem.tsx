@@ -27,8 +27,8 @@ function CharacterItem({ character, key }: CharacterItem) {
           className="rounded-full mr-2 absolute -left-3 -top-3"
           src={character.image}
           alt={"userphoto-" + key}
-          width="80"
-          height="80"
+          width="100"
+          height="100"
         />
       ) : (
         <div className="flex justify-center items-center rounded-full mr-2 absolute -left-3 -top-3 bg-sky-600 w-[80px] h-[115px] p-10">

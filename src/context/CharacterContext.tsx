@@ -8,7 +8,8 @@ interface CharacterContextProps {
   setSelectedCharacter: React.Dispatch<React.SetStateAction<Character[]>>;
   addCharacter: (character: Character) => void;
   removeCharacter: (character: Character) => void;
-  removeSelectedCharacter: (Character: Character) => void;
+  removeSelectedCharacter: (character: Character) => void;
+  saveCharacter: (character: Character, name: string) => void;
 }
 
 interface Props {
@@ -23,6 +24,7 @@ const CharacterContext = createContext<CharacterContextProps>({
   setSelectedCharacter() {},
   setCharacters() {},
   removeSelectedCharacter() {},
+  saveCharacter() {},
 });
 
 export const CharacterProvider: React.FC<Props> = ({ children }) => {
@@ -45,6 +47,14 @@ export const CharacterProvider: React.FC<Props> = ({ children }) => {
     );
   };
 
+  const saveCharacter = (character: Character, name: string) => {
+    setCharacters((prevCharacters) =>
+      prevCharacters.map((item) =>
+        item.id === character.id ? { ...item, name: name } : item
+      )
+    );
+  };
+
   return (
     <CharacterContext.Provider
       value={{
@@ -55,6 +65,7 @@ export const CharacterProvider: React.FC<Props> = ({ children }) => {
         addCharacter,
         removeCharacter,
         removeSelectedCharacter,
+        saveCharacter,
       }}
     >
       {children}
